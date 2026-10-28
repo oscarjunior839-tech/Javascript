@@ -6,18 +6,16 @@
     <title>Primeiros passos em DOM</title>
     <style>
         body{
-             background-color: yellow;
-             color: white;
-             font-family: Arial, Helvetica, sans-serif;
-             font: 16px;
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
         }
     </style>
 </head>
 <body>
-    <h1> Aprendendo Primeiros passos em DOM</h1>
-    <p> Aqui vai o resultado </p>
-    <P>voce sabe disso</P>
-    <div id="msg">clique em mim</div>
+<input type="number" name="in1" id="in1" placeholder="digite o primeiro numero">+
+<input type="number" name="in2" id="in2" placeholder="digite o segundo numero">
+<input type="button" value="somar" onclick="somar()">
+<div id="res">resultado</div>
 </body>
 <script>
    /* var p1=document.getElementsByTagName("p")[1];
@@ -45,9 +43,39 @@
     window.alert("O resultado da soma é: "+res);*/
 
 
-    var name=window.prompt("Qual é o seu nome?");
-    document.write("seu nome em maiúsculo é: "+name.toUpperCase());
+   /* var name=window.prompt("Qual é o seu nome?");
+    document.write("seu nome em maiúsculo é: "+name.toUpperCase())*/
 
+/*var area = document.getElementById("area");
+    area.addEventListener("click", clicar);
+    area.addEventListener("mouseenter", entrar);
+    area.addEventListener("mouseout", sair);
 
+function clicar() {
+       area.innerHTML = "clicou !";
+       area.style.background = "red";
+    }
+
+    function entrar() {
+        area.innerHTML = "entrou!";
+        area.style.background = "blue";
+    }
+
+    function sair() {
+        area.innerHTML = "Você saiu da área!";
+        area.style.background = "orange";
+    }
+*/
+
+    function somar() {
+
+        var in1 = document.getElementById("in1");
+        var in2 = document.getElementById("in2");
+        var res=document.getElementById("res");
+        var n1 = Number(in1.value);
+        var n2 = Number(in2.value);
+        var s = n1 + n2;
+        res.innerText = `O resultado da soma é: ${s}`;
+    }
 </script>
 </html>
