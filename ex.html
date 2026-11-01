@@ -12,10 +12,12 @@
     </style>
 </head>
 <body>
-<input type="number" name="in1" id="in1" placeholder="digite o primeiro numero">+
-<input type="number" name="in2" id="in2" placeholder="digite o segundo numero">
-<input type="button" value="somar" onclick="somar()">
-<div id="res">resultado</div>
+     <h1>site de informações</h1>
+        <p id="msg">Olá, seja bem vindo(a)!</p>
+      Ensira seu nome:  <input type="text" id="pais" placeholder="Digite seu pais">
+      <input type="button" value="Enviar" onclick="somar()">
+      <div id="res"></div>
+
 </body>
 <script>
    /* var p1=document.getElementsByTagName("p")[1];
@@ -67,7 +69,7 @@ function clicar() {
     }
 */
 
-    function somar() {
+   /* function somar() {
 
         var in1 = document.getElementById("in1");
         var in2 = document.getElementById("in2");
@@ -76,6 +78,20 @@ function clicar() {
         var n2 = Number(in2.value);
         var s = n1 + n2;
         res.innerText = `O resultado da soma é: ${s}`;
+    }*/
+
+       function somar() {
+        var pais = document.getElementById("pais");
+        var res=document.getElementById("res");
+        var p = pais.value;
+        res.innerText = `O seu país é: ${p}`;
+
+        if(p==="Brazil"){
+            res.innerText = `O seu país é: ${p} e você é brasileiro(a)`;
+        }
+        else{
+            res.innerText = `O seu país é: ${p} e você não é estrangeiro(a)`;
+        }
     }
 </script>
 </html>

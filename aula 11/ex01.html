@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Identificacao</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            background:linear-gradient(to right,blue,white);
+        }
+    </style>
+</head>
+<body>
+    <h1>site de informações</h1>
+        <p id="msg">Olá, seja bem vindo(a)!</p>
+      Ensira seu nome:  <input type="text" id="pais" placeholder="Digite seu pais">
+      <input type="button" value="Enviar" onclick="enviar()">
+      <div id="res"></div>
+</body>
+<script>
+     function enviar() {
+        var pais = document.getElementById("pais");
+        var res=document.getElementById("res");
+        var p = pais.value;
+        res.innerText = `O seu país é: ${p}`;
+
+        if(p==="Brazil"){
+            res.innerText = `O seu país é: ${p} e você é brasileiro(a)`;
+        }
+        else{
+            res.innerText = `O seu país é: ${p} e você é estrangeiro(a)`;
+        }
+    }
+</script>
+</html>
