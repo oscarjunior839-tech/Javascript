@@ -6,92 +6,32 @@
     <title>Primeiros passos em DOM</title>
     <style>
         body{
+            background:linear-gradient(to right, yellow, #0072ff);
             font-family: Arial, Helvetica, sans-serif;
             text-align: center;
         }
     </style>
 </head>
 <body>
-     <h1>site de informações</h1>
-        <p id="msg">Olá, seja bem vindo(a)!</p>
-      Ensira seu nome:  <input type="text" id="pais" placeholder="Digite seu pais">
-      <input type="button" value="Enviar" onclick="somar()">
-      <div id="res"></div>
-
+     <h1>site de multas</h1>
+     velocidade: <input type="number" name="velocidade" id="velocidade" placeholder="Digite a velocidade">
+     <input type="button" value="verificar" id="verificar" onclick="verificar()">
+     <div id="resultado"></div>
 </body>
 <script>
-   /* var p1=document.getElementsByTagName("p")[1];
-    document.write(p1.innerHTML);
-    p1.style.color="blue";
-    p1.style.backgroundColor="black";*/
+function verificar(){
+    var velocidade = document.getElementById("velocidade").value;
+    var resultado = document.getElementById("resultado");
+    var velocidade = parseFloat(velocidade);
+      resultado.innerHTML = "Sua velocidade é: " + velocidade + " km/h. ";
 
-   /* var p1=document.getElementById("msg");
-    p1.style.color="blue";
-    p1.style.backgroundColor="black";*/
-    
-   /* var p3=document.querySelector("#msg");
-    p3.style.color="blue";
-    p3.style.backgroundColor="black";
-    document.write(p3.innerHTML= "estou aprendendo DOM");*/
-
-
-    /*var name=prompt("Qual é o seu nome?");
-    alert("Olá "+name+" seja bem vindo(a)!");
-    confirm("Você quer continuar?");*/
-
-   /* var val1=prompt("Digite um valor");
-    var val2=prompt("Digite outro valor");
-    var res=parseFloat(val1)+parseFloat(val2);
-    window.alert("O resultado da soma é: "+res);*/
-
-
-   /* var name=window.prompt("Qual é o seu nome?");
-    document.write("seu nome em maiúsculo é: "+name.toUpperCase())*/
-
-/*var area = document.getElementById("area");
-    area.addEventListener("click", clicar);
-    area.addEventListener("mouseenter", entrar);
-    area.addEventListener("mouseout", sair);
-
-function clicar() {
-       area.innerHTML = "clicou !";
-       area.style.background = "red";
+    if(velocidade > 80){
+        resultado.innerHTML = "Você foi multado!";
     }
-
-    function entrar() {
-        area.innerHTML = "entrou!";
-        area.style.background = "blue";
+    else{
+        resultado.innerHTML = "Você está dentro do limite de velocidade.";
     }
+}
 
-    function sair() {
-        area.innerHTML = "Você saiu da área!";
-        area.style.background = "orange";
-    }
-*/
-
-   /* function somar() {
-
-        var in1 = document.getElementById("in1");
-        var in2 = document.getElementById("in2");
-        var res=document.getElementById("res");
-        var n1 = Number(in1.value);
-        var n2 = Number(in2.value);
-        var s = n1 + n2;
-        res.innerText = `O resultado da soma é: ${s}`;
-    }*/
-
-       function somar() {
-        var pais = document.getElementById("pais");
-        var res=document.getElementById("res");
-        var p = pais.value;
-        res.innerText = `O seu país é: ${p}`;
-
-        if(p==="Brazil"){
-            res.innerText = `O seu país é: ${p} e você é brasileiro(a)`;
-        }
-        else{
-            res.innerText = `O seu país é: ${p} e você não é estrangeiro(a)`;
-        }
-    }
 </script>
 </html>
